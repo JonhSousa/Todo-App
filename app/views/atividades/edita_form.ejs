@@ -31,13 +31,16 @@
         <div class="input-field col s8 m12 l8">
             <label for="prioridade">Prioridade</label>
             <select name="prioridade">
-                <option value="Mínima">
-                    Mínima</option>
-                    <option value="Mediana">
-                        Mediana</option>
-                        <option value="Máxima">
-                            Máxima</option>
 
+            <%var prioridades = ["Mínima", "Mediana","Máxima"];
+            for(var i = 0;i<prioridades.length;i++){
+                if(atividade[0].prioridade === prioridades[i]){%>
+                <option value="<%=atividade[0].prioridade%>" selected>
+                    <%=atividade[0].prioridade%></option>
+                    <%}else{%>
+                    <option value="<%=prioridades[i]%>">
+                        <%=prioridades[i]%></option>
+                        <%}}%>
                         </select>
                     </div>
                 </div>
