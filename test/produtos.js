@@ -13,16 +13,16 @@ describe('AtividadesController',function(){
         request.post('/atividades')
         .send({
             titulo:"",
-            descricao:"novo livro"
+            descricao:"nova atividade"
         }).expect(400,done);
     });
 
     it('#cadastro de nova atividade com dados válidos',function(done){
         request.post('/produtos')
         .send({
-            titulo:"Título do livro",
-            descricao:"novo livro",
-            preco:20.50
+            titulo:"Titulo da atividade",
+            descricao:"nova atividade",
+            prioridade: "Máxima"
         }).expect(302,done);
     });
 });
