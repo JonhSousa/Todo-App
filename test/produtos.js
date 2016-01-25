@@ -18,7 +18,7 @@ describe('AtividadesController',function(){
     });
 
     it('#cadastro de nova atividade com dados válidos',function(done){
-        request.post('/produtos')
+        request.post('/atividades')
         .send({
             titulo:"Titulo da atividade",
             descricao:"nova atividade",
