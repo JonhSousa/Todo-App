@@ -1,0 +1,32 @@
+{
+  "name": "casadocodigo",
+  "version": "1.0.0",
+  "description": "site da casa do codigo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonh Sousa",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "*",
+    "body-parser": "^1.14.2",
+    "bookshelf": "0.5",
+    "cookie-parser": "*",
+    "ejs": "^2.3.4",
+    "express": "^4.13.4",
+    "express-load": "^1.1.15",
+    "express-session": "*",
+    "express-validator": "^2.19.0",
+    "mysql": "^2.10.2",
+    "nodemon": "^1.8.1",
+    "passport": "*",
+    "passport-local": "*",
+    "prototype": "0.0.5",
+    "socket.io": "^1.4.4"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "supertest": "^1.1.0"
+  }
+}

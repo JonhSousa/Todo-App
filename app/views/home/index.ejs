@@ -1,0 +1,12 @@
+<html>
+<body>
+    Esta é a página inicial provisória da aplicação.
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        socket.on('novaPromocao',function(data){
+            alert("Livro em promoção "+data.livro.titulo);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+<head>
+  <% include ../partials/head %>
+</head>
+<body>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class='erros'>
+        <%if(errosValidacao){%>
+        <ul>
+            <%for (var i=0; i<errosValidacao.length; i++){%>
+            <li><%=errosValidacao[i].param%> - <%=errosValidacao[i].msg%></li>
+            <%}%>
+        </ul>
+        <%}%>
+    </div>
+    <form action="/atividades" method="post">
+        <div>
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" name="titulo" value="<%=atividade.titulo%>" placeholder="coloque o título aqui"/>
+        </div>
+        <div>
+            <label for="descricao">Descrição</label>
+            <textarea type="text" id="descricao" name="descricao" placeholder="coloque a descrição aqui" cols="20" rows="10"><%=atividade.descricao%></textarea>
+        </div>
+        <div>
+            <label for="prioridade">Prioridade</label>
+            <select name="prioridade">
+                <option value="Mínima">
+                    Mínima</option>
+                    <option value="Mediana">
+                        Mediana</option>
+                        <option value="Máxima">
+                            Máxima</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Cadastrar Atividade"/>
+                </form>
+                <main>
+                  <footer>
+                    <% include ../partials/footer %>
+                </footer>
+            </body>
+            </html>

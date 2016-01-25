@@ -1,0 +1,42 @@
+<html>
+<head>
+  <% include ../partials/head %>
+</head>
+<body>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+<div class="row">
+       <% for(var i=0;i<lista.length;i++){%>
+        <div class="col s12 m12 l3">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title grey-text text-darken-4"><%=lista[i].titulo%></span>
+              <p><%=lista[i].descricao%> </p>
+              <p>Prioridade: <%=lista[i].prioridade%> </p>
+            </div>
+            <div class="card-action">
+              <form method="post" style="display:inline-block;" action="/atividades/edita" class="inline">
+            <input type="hidden" name="id" value="<%=lista[i].id%>">
+            <button class="btn waves-effect waves-light" type="submit" name="submit_param" value="submit_value" class="link-button">Editar</button>
+          </form>
+          <form method="post" style="display:inline-block;" action="/atividades/deleta" class="inline">
+            <input type="hidden" name="id" value="<%=lista[i].id%>">
+            <button class="btn waves-effect waves-light" type="submit" name="submit_param" value="submit_value" class="link-button">Remover</button>
+          </form>
+            </div>
+          </div>
+        </div>
+        <%}%>
+      </div>
+    <main>
+      <footer>
+        <% include ../partials/footer %>
+    </footer>
+    </body>
+    </html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+  <% include ../partials/head %>
+</head>
+<body>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div class='erros'>
+    </div>
+    <form action="/atividades/salva_edicao" method="post">
+        <div>
+            <input type="hidden" name="id" value="<%=atividade[0].id%>"/>
+        </div>
+        <div>
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" name="titulo" value="<%=atividade[0].titulo%>" placeholder="coloque o título aqui"/>
+        </div>
+        <div>
+            <label for="descricao">Descrição</label>
+            <textarea type="text" id="descricao" name="descricao" placeholder="coloque a descrição aqui" cols="20" rows="10"><%=atividade[0].descricao%></textarea>
+        </div>
+        <div>
+            <label for="prioridade">Prioridade</label>
+            <select name="prioridade">
+                <option value="Mínima">
+                    Mínima</option>
+                    <option value="Mediana">
+                        Mediana</option>
+                        <option value="Máxima">
+                            Máxima</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Cadastrar Livro"/>
+                </form>
+    <main>
+      <footer>
+        <% include ../partials/footer %>
+    </footer>
+    </body>
+    </html>
