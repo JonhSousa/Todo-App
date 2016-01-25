@@ -4,8 +4,6 @@
 </head>
 <body>
   <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
   <header>
     <% include ../partials/header %>
 </header>
@@ -20,16 +18,22 @@
         </ul>
         <%}%>
     </div>
-    <form action="/atividades" method="post">
-        <div>
-            <label for="titulo">Título</label>
-            <input type="text" id="titulo" name="titulo" value="<%=atividade.titulo%>" placeholder="coloque o título aqui"/>
-        </div>
-        <div>
+    <div class="row">
+        <form class="col s12 m8 l6" action="/atividades" method="post">
+        <div class="row">
+            <div class="input-field col s8 m12 l8">
+                <label for="titulo">Título</label>
+                <input class="validate" type="text" id="titulo" name="titulo" value="<%=atividade.titulo%>" placeholder="coloque o título aqui"/>
+            </div>
+            </div>
+                    <div class="row">
+        <div class="input-field col s8 m12 l8">
             <label for="descricao">Descrição</label>
-            <textarea type="text" id="descricao" name="descricao" placeholder="coloque a descrição aqui" cols="20" rows="10"><%=atividade.descricao%></textarea>
+            <textarea class="materialize-textarea" type="text" id="descricao" name="descricao" placeholder="coloque a descrição aqui" cols="20" rows="10"><%=atividade.descricao%></textarea>
+            </div>
         </div>
-        <div>
+        <div class="row">
+        <div class="input-field col s8 m12 l8">
             <label for="prioridade">Prioridade</label>
             <select name="prioridade">
                 <option value="Mínima">
@@ -38,13 +42,20 @@
                         Mediana</option>
                         <option value="Máxima">
                             Máxima</option>
+
                         </select>
                     </div>
-                    <input type="submit" value="Cadastrar Atividade"/>
-                </form>
-                <main>
-                  <footer>
-                    <% include ../partials/footer %>
-                </footer>
-            </body>
-            </html>
+                </div>
+                <div class="row">
+                   <div class="input-field col s12 m6">
+                    <input class="btn" type="submit" value="Cadastrar"/>
+                </div></div>
+            </form>
+            </div>
+
+            <main>
+              <footer>
+                <% include ../partials/footer %>
+            </footer>
+        </body>
+        </html>

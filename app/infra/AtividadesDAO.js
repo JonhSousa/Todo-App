@@ -3,6 +3,7 @@ function AtividadesDAO(connection){
 }
 
 AtividadesDAO.prototype.lista = function(callback){
+    console.log("to aqui!")
     this._connection.query('select * from atividade',callback);
 }
 

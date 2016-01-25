@@ -5,9 +5,8 @@
 
     module.exports = function() {
         var app = express();
-
         app.use(express.static('./app/public'));
-        //app.use('/static', express.static(__dirname + '/public'));
+        //app.use('./app/public/', express.static(__dirname + '/app/public'));
         app.set('view engine', 'ejs');
         app.set('views','./app/views');
 

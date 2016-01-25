@@ -49,7 +49,7 @@ module.exports = function(app){
 
 
         AtividadesBanco.listaPorId(atividadeEdit.id,function(err,results){
-
+            console.log(results);
             if(err){
                 return next(erros);
             }
@@ -80,7 +80,7 @@ module.exports = function(app){
         if(erros){
             res.format({
                 html: function(){
-                    renderForm(res.status(400),erros,Atividade);
+                    renderForm(res.status(400),erros,atividade);
                 },
                 json: function(){
                     res.status(400).json(erros);
